@@ -1,5 +1,7 @@
 package com.aguinaga.armando.proyecto_1.models;
 
+import com.aguinaga.armando.proyecto_1.app.MyApplication;
+
 import java.util.Date;
 
 import io.realm.RealmObject;
@@ -24,7 +26,7 @@ public class Note extends RealmObject {
     }
 
     public Note (String descripcion){
-        this.id = 0;
+        this.id = MyApplication.NoteID.incrementAndGet();
         this.descripcion = descripcion;
         this.createDate = new Date();
     }
